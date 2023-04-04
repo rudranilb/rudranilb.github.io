@@ -1,4 +1,13 @@
-<h1 style="font-size:60px;">Welcome to Sanatio by FluidAI</h1>
+<h1 style="font-size:60px;">Welcome to Sanatio by FluidAI
+<script src="https://cdn.auth0.com/js/auth0/9.18.0/auth0.min.js"></script>
+var auth0 = new auth0.WebAuth({
+  domain: dev-mk30nolozc7tdmp1.us.auth0.com,
+  clientID: iIIJu7WYntOumPuaFqRHzjSaqAvOc7Pc,
+  responseType: 'token id_token',
+  scope: 'openid profile'
+});
+
+</h1>
 
 <input type=button onClick="parent.open('https://fluid-ai.gitbook.io/fluid-ai-sanatio')" 
 value='Learn How to use Sanatio' >
@@ -9,15 +18,5 @@ value='Get a Token' >
 <!-- Include the Auth0 JavaScript library -->
 <script src="https://cdn.auth0.com/js/auth0/9.15.0/auth0.min.js"></script>
 
-<!-- Create a new Auth0 client object -->
-<script>
-  var auth0 = new auth0.WebAuth({
-    domain: 'dev-mk30nolozc7tdmp1.us.auth0.com',
-    clientID: 'iIIJu7WYntOumPuaFqRHzjSaqAvOc7Pc',
-    responseType: 'token',
-    scope: 'openid profile email'
-  });
-</script>
-
 <!-- Add the "Get a Token" button -->
-<input type="button" onclick="auth0.authorize()" value="Get a Token">
+<button onclick="auth0.authorize()">Login</button>
